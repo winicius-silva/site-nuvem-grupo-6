@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Saira+Semi+Condensed:wght@200&display=swap%27');
+
+
+
+ul {
+    list-style: none;
+    /* margin: 0; */
+}
+
+ol,
+ul {
+    padding-left: 0rem;
+}
+.card-container{
+    max-width: 50%;
+    max-height: 100%;
+}
+
+#card {
+    border: 1px solid black;
+    border-top: red 3px solid;
+    margin-top:10px;
+    margin-left: 40px;
+    padding-right: 10px;
+    width: 150px;
+    display:inline-block;
+    cursor: pointer;
+}
+
+#wm-card {
+    border: black 2px solid;
+    border-top: orange 3px solid;
+    margin-top:10px;
+    margin-left: 40px;
+    padding-right: 10px;
+    width: 150px;
+    display:inline-block;
+    cursor: pointer;
+}
+
+#nm-card {
+    border: black 2px solid;
+    border-top: #36b536 3px solid;
+    margin-top:10px;
+    margin-left: 40px;
+    padding-right: 10px;
+    width: 150px;
+    display:inline-block; 
+    cursor: pointer;   
+}
+
+a:link{
+    text-decoration : none;
+    color:white
+}
+a:visited {
+    color: white;
+}
+
+#menu-top {
+    background-color:#212121;
+    font-weight: 100;
+    color:white;
+}
+
+#logo-topo{
+    width: 150px;
+    margin-top: 15px;
+}
+#texto-logo{
+    align-items: center;
+}
+select{
+    width: 200px;
+    text-align: center;
+}
+.filtros{
+    float:right;
+    margin-right: 100px;
+    margin-top:50px;
+}
+.collapse{
+    min-width: 50%;
+    float:right;
+    padding-bottom: 20px;
+    background-color:#161b22;
+    color:black
+    
+}
+#table_div{
+    margin-left: 200px;
+}
+#titulo-monitoramento{
+    margin-left: 80px;
+    font-size: 25px;
+    font-weight: 100;  
+}
+h3{
+    margin-left: 90px;
+    color:white;
+}
+
+
+.footer img {
+    width: 40px;
+}
+
+.contaner_footer{
+    padding-top: 10px ;
+    padding-left: 100px;
+}
+
+
+.footer li {
+    display: inline-block;
+    padding: 20px 30px 0px 30px;
+}
+
+.footer ul {
+    float: right;
+    margin-right: 40%;
+}
+
+.footer {
+    background-color: rgb(44, 48, 42);
+    height: 100px;
+    color: #fff;
+}

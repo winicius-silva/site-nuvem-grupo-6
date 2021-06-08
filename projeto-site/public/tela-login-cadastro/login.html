@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../img/logo.png">
+  <link rel="stylesheet" href="style-login.css">
+
+
+  <title>Login</title>
+</head>
+
+<body>
+  <div class="row" id="id-div-principal">
+
+    <div class="container">
+      <h3 style="background-color: rgb(25, 143, 54); border-radius: 10px;">OMNITRIX - ULTRA T</h3>
+      
+      <form id="form_login" method="post" onsubmit="return entrar()">
+        <input id="signin" type="radio" name="tab" checked="checked" />
+        <input id="register" type="radio" name="tab" />
+        <div class="pages">
+          <div class="page">
+            <div class="input">
+              <input class="text" type="text" name="email" placeholder="EMAIL" />
+            </div>
+            <div class="input">
+              <input class="text" type="password" name="senha" placeholder="SENHA" />
+            </div>
+            <div class="input">
+              <input type="submit" value="LOGIN" />
+            </div>
+          </div>
+      </form>
+        <div class="page signup">
+          <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+            <div class="input">
+              <input class="text" name="nome" type="text" placeholder="NOME" />
+            </div>
+            <div class="input">
+              <input class="text" name="email" type="email" placeholder="EMAIL" />
+            </div>
+            <div class="input">
+              <input class="text" name="senha" type="password" placeholder="SENHA" />
+            </div>
+            <div class="input">
+              <input type="submit" value="Registrar-se!" />
+            </div>
+            <div id="div_erro"></div>
+          </form>
+        </div>
+      </div>
+      <div class="tabs">
+        <label class="tab text" for="signin">
+          Logar</label>
+        <label class="tab text" for="register">
+          Registrar</label>
+      </div>
+    </div>
+
+  </div>
+
+<!--Footer-->
+<div class="footer" id="contato">
+  <div class="contaner_footer">
+      <ul>
+          <li><a target="_blank" href="https://facebook.com/"><img src="../img/facebook.png"></a></li>
+          <li><a target="_blank" href="https://github.com/Projeto-PI-Grupo-4/Health-Analytics"><img src="../img/github.png"></a></li>
+          <li><a target="_blank" href="https://twitter.com/"><img src="../img/twitter.png"></a></li>
+          <li><a target="_blank" href="https://linkedin.com/"><img src="../img/linkedin.png"></a></li>
+          <li id="botao_voltar"><a href="../index.html">VOLTAR</a></li>
+      </ul>
+  </div>
+</div>
+<!--Fim do footer-->
+
+</body>
+
+</html>
+<script>
+  var signin = document.querySelector('#signin')
+  var register = document.querySelector('#register')
+
+  sugnin = false;
+  register = false;
+
+  setTimeout(function () { register.checked = true }, 1000)
+  setTimeout(function () { signin.checked = true }, 2000)
+
+</script>
+
+<script>
+  function entrar() {
+    var formulario = new URLSearchParams(new FormData(form_login));
+    fetch("/usuarios/autenticar", {
+      method: "POST",
+      body: formulario
+    }).then(resposta => {
+
+      if (resposta.ok) {
+
+        resposta.json().then(json => {
+
+          sessionStorage.login_usuario_meuapp = json.login;
+          sessionStorage.nome_usuario_meuapp = json.nome;
+
+          window.location.href = '../dash/dash.html';
+
+          alert("Logado com Sucesso!")
+        });
+
+      } else {
+
+        console.log('Erro de login!');
+
+        resposta.text().then(texto => {
+          console.error(texto);
+
+        });
+      }
+    });
+
+    return false;
+  }
+</script>
+
+<script>
+  function cadastrar() {
+    var formulario = new URLSearchParams(new FormData(form_cadastro));
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      body: formulario
+    }).then(function (response) {
+
+      if (response.ok) {
+
+        window.location.href = 'login.html';
+
+      } else {
+
+        console.log('Erro de cadastro!');
+        response.text().then(function (resposta) {
+          div_erro.innerHTML = resposta;
+        });
+      }
+    });
+
+    return false;
+  }
+</script>

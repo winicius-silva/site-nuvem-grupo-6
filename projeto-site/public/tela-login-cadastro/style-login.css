@@ -1,0 +1,266 @@
+#id-div-principal{
+    width: 100vw;
+    height: 86vh;    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-color:rgb(2, 49, 22); */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+
+
+
+.border-6 {
+    border-width:6px !important;
+    /*border-color: rgba(60, 60, 60, 0.5) !important;*/
+}
+
+
+.border-transparent {
+    border: 10px solid rgba(0, 0, 0, 0.938) !important;
+}
+html, body {
+    padding: 0px;
+    margin: 0px;
+    background: #1b2220;
+    font-family: "Raleway", sans-serif;
+    color: #FFF;
+    height: 100%;
+  }
+  
+  .container {
+    min-height: 400px;
+    max-width: 350px;
+    margin: 40px auto;
+    
+    border-radius: 2px;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    -webkit-animation: hi 0.5s;
+            animation: hi 0.5s;
+    -webkit-transform: translateZ(0px);
+  }
+  .container * {
+    background-color: transparent;
+    box-sizing: border-box;
+  }
+  
+  .pages {
+    background-color: transparent;
+    flex: 1;
+    white-space: nowrap;
+    position: relative;
+    transition: all 0.4s;
+    display: flex;
+    
+  }
+  .pages .page {
+    min-width: 100%;
+    padding: 20px 15px;
+    padding-top: 0px;
+    /* background: linear-gradient(to top, #09b90998, #176330d2); */
+    background-color: #fff;
+  }
+  .pages .page:nth-of-type(1) .input {
+    transform: translateX(-100%) scale(0.5);
+  }
+  .pages .page:nth-of-type(2) .input {
+    transform: translateX(100%) scale(0.5);
+  }
+  .pages .page .input {
+    transition: all 1s;
+    opacity: 0;
+    transition-delay: 0s;
+  }
+  .pages .page.signup {
+    /* background: linear-gradient(to left, #09b90998, #000000d2); */
+    background-color: #fff;
+  }
+  .pages .page .title {
+    margin-bottom: 10px;
+    font-size: 12;
+    position: relative;
+    line-height: 10px;
+  }
+  .pages .page .title i {
+    vertical-align: text-bottom;
+    font-size: 19px;
+  }
+  .pages .page .input {
+    margin-top: 20px;
+  }
+  .pages .page input.text {   
+    display: inline;
+    width: 98%;
+    padding: 7px;
+    border: none;
+    border-bottom: 1px solid #000;
+    margin-bottom: 10px;
+    color: #000;
+    font: 16px Arial, Helvetica, sans-serif;
+    height: 45px;
+    color:rgb(0, 0, 0);
+  }
+
+  .pages .page input[type=submit] {
+    
+    background: rgba(0, 0, 0, 0.5);
+ 
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+  
+  .tabs {
+    
+    max-height: 50px;
+    height: 50px;
+    display: flex;
+    
+  }
+  .tabs .tab {
+    flex: 1;
+   background-color: rgb(19, 18, 18);
+    text-align: center;
+    line-height: 50px;
+    transition: all 0.2s;
+    
+  }
+  .tabs .tab .text {
+    font-size: 14px;
+    transform: scale(1);
+    transition: all 0.2s;
+  }
+  
+  input[type=radio] {
+    display: none;
+  }
+  
+  input[type=radio]:nth-of-type(1):checked ~ .tabs .tab:nth-of-type(1) {
+    box-shadow: inset -3px 2px 5px rgba(0, 0, 0, 0.25);
+    color: #53c2854b;
+  }
+  input[type=radio]:nth-of-type(1):checked ~ .tabs .tab:nth-of-type(1) .text {
+    transform: scale(0.9);
+  }
+  input[type=radio]:nth-of-type(1):checked ~ .pages {
+    transform: translateX(0%);
+  }
+  input[type=radio]:nth-of-type(1):checked ~ .pages .page:nth-of-type(1) .input {
+    opacity: 1;
+    transform: translateX(0%);
+    transition: all 0.5s;
+  }
+  input[type=radio]:nth-of-type(1):checked ~ .pages .page:nth-of-type(1) .input:nth-child(1) {
+    transition-delay: 0.2s;
+  }
+  input[type=radio]:nth-of-type(1):checked ~ .pages .page:nth-of-type(1) .input:nth-child(2) {
+    transition-delay: 0.4s;
+  }
+  input[type=radio]:nth-of-type(1):checked ~ .pages .page:nth-of-type(1) .input:nth-child(3) {
+    transition-delay: 0.6s;
+  }
+  input[type=radio]:nth-of-type(1):checked ~ .pages .page:nth-of-type(1) .input:nth-child(4) {
+    transition-delay: 0.8s;
+  }
+  input[type=radio]:nth-of-type(1):checked ~ .pages .page:nth-of-type(1) .input:nth-child(5) {
+    transition-delay: 1s;
+  }
+  
+  input[type=radio]:nth-of-type(2):checked ~ .tabs .tab:nth-of-type(2) {
+    box-shadow: inset 3px 2px 5px rgba(0, 0, 0, 0.25);
+    color: #53c2854b;
+  }
+  input[type=radio]:nth-of-type(2):checked ~ .tabs .tab:nth-of-type(2) .text {
+    transform: scale(0.9);
+  }
+  input[type=radio]:nth-of-type(2):checked ~ .pages {
+    transform: translateX(-100%);
+  }
+  input[type=radio]:nth-of-type(2):checked ~ .pages .page:nth-of-type(2) .input {
+    opacity: 1;
+    transform: translateX(0%);
+    transition: all 0.5s;
+  }
+  input[type=radio]:nth-of-type(2):checked ~ .pages .page:nth-of-type(2) .input:nth-child(1) {
+    transition-delay: 0.2s;
+  }
+  input[type=radio]:nth-of-type(2):checked ~ .pages .page:nth-of-type(2) .input:nth-child(2) {
+    transition-delay: 0.4s;
+  }
+  input[type=radio]:nth-of-type(2):checked ~ .pages .page:nth-of-type(2) .input:nth-child(3) {
+    transition-delay: 0.6s;
+  }
+  input[type=radio]:nth-of-type(2):checked ~ .pages .page:nth-of-type(2) .input:nth-child(4) {
+    transition-delay: 0.8s;
+  }
+  input[type=radio]:nth-of-type(2):checked ~ .pages .page:nth-of-type(2) .input:nth-child(5) {
+    transition-delay: 1s;
+  }
+  
+  @-webkit-keyframes hi {
+    from {
+      transform: translateY(50%) scale(0, 0);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes hi {
+    from {
+      transform: translateY(50%) scale(0, 0);
+      opacity: 0;
+    }
+  }
+img{
+  width: 80px;
+}
+h3{
+  justify-self: center;
+}
+
+/*  FOOTER     */
+
+.footer img {
+  width: 40px;
+}
+
+.contaner_footer{
+  padding-top: 10px ;
+  padding-left: 365px;
+}
+
+
+.footer li {
+  display: inline-block;
+  padding: 20px 30px 0px 30px;
+}
+
+.footer ul {
+  float: right;
+  margin-right: 40%;
+}
+
+.footer {
+  background-color: rgb(44, 48, 42);
+  height: 100px;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+a:link{
+  text-decoration : none;
+  color:white;
+  
+}
+a:visited {
+  color: white;
+}
+
+/*fim do footer*/
