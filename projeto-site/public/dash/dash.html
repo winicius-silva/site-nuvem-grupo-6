@@ -163,7 +163,7 @@
                 ['Label', 'Value'],
                 ['MEMORIA', 80],
                 ['CPU', 55],
-                ['TEMP', 68]
+                ['TEMP', 0]
             ]);
 
             var options = {
@@ -176,19 +176,6 @@
             var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
 
             chart.draw(data, options);
-
-            setInterval(function () {
-                data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-                chart.draw(data, options);
-            }, 13000);
-            setInterval(function () {
-                data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
-                chart.draw(data, options);
-            }, 5000);
-            setInterval(function () {
-                data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
-                chart.draw(data, options);
-            }, 26000);
         }
 
         google.charts.load('current', { 'packages': ['table'] });
@@ -201,11 +188,11 @@
             data.addColumn('string', 'MEMORIA');
             data.addColumn('string', 'TEMPERATURA');
             data.addRows([
-                ['30/03/2021', '20%', '30%', '40°C',],
-                ['30/03/2021', '30%', '30%', '40°C',],
-                ['30/03/2021', '20%', '30%', '40°C',],
-                ['30/03/2021', '20%', '30%', '40°C',],
-                ['30/03/2021', '20%', '30%', '40°C',],
+                ['14/06/2021', '20%', '30%', 'temperatura 0',],
+                ['30/03/2021', '59%', '74%', 'temperatura 0',],
+                ['30/03/2021', '69%', '50%', 'temperatura 0',],
+                ['30/03/2021', '29%', '53%', 'temperatura 0',],
+                ['30/03/2021', '87%', '76%', 'temperatura 0',],
             ]);
 
             var table = new google.visualization.Table(document.getElementById('table_div'));
