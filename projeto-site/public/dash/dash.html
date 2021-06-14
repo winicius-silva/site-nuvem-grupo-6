@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="../img/logo.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
@@ -19,30 +20,18 @@
             <img src="../img/logo.png" id='logo-topo' alt=""> <span id="texto-logo">
                 <span id="texto-logo"> OMNITRIX-ULTRA T </span>
                 <div class="filtros">
-                    <select>
+                    <select onchange="filtroRam()" id="ram">
                         <option value="">RAM</option>
-                        <option value="">Mais critico</option>
-                        <option value="">Menos critico</option>
+                        <option value="maisCritico">Mais critico</option>
+                        <option value="menosCritico">Menos critico</option>
                     </select>
 
-                    <select name="" id="">
+                    <select name="" id="temperatura">
                         <option value="">TEMPERATURA</option>
-                        <option value="">Maior temperatura</option>
-                        <option value="">Menor temperatura</option>
+                        <option value="maiorTemperatura">Maior temperatura</option>
+                        <option value="menorTemperatura">Menor temperatura</option>
                     </select>
-
-                    <select name="" id="">
-                        <option value="">Sistema Operacional</option>
-                        <option value="">Linux</option>
-                        <option value="">Windows</option>
-                    </select>
-
-                    <select name="" id="">
-                        <option value="">Processador</option>
-                        <option value="">Mais critico</option>
-                        <option value="">Menos critico</option>
-                    </select>
-                    <button>Limpar filtros</button>
+                    <button onclick="buscarDados()">Limpar filtros</button>
                     <a href="../index.html">SAIR</a>
                 </div>
         </div>
@@ -50,277 +39,121 @@
 
     <div class="collapse" id="chart" oncick="showInformationChart()">
         <div>
-            <h3> PC- David </h3>
+            <h3> PC - David </h3>
             <div id="chart_div" class="chart"> </div>
             <div id="table_div"></div>
         </div>
     </div>
 
-    <div class="card-container">
+    <div class="card-container" id="cont-card">
         <span id="titulo-monitoramento"> Monitoramento </span>
         <br>
-        <div id="card" onclick="showInformationChart()">
-            <ul>
-                <li>
-                    nome: David
-                </li>
-                <li>
-                    RAM: 20%
-                </li>
-                <li>
-                    DISCO:10%
-                </li>
-                <li>
-                    TEMP: 40°C
-                </li>
-                <li>
-                    Windows
-                </li>
-            </ul>
-        </div>
-        <div id="card" onclick="showInformationChart()">
-            <ul>
-                <li>
-                    nome: David
-                </li>
-                <li>
-                    RAM: 20%
-                </li>
-                <li>
-                    DISCO:10%
-                </li>
-                <li>
-                    TEMP: 40°C
-                </li>
-                <li>
-                    Linux
-                </li>
-
-            </ul>
-        </div>
-
-        <div id="card" onclick="showInformationChart()">
-            <ul>
-                <li>
-                    nome: David
-                </li>
-                <li>
-                    RAM: 20%
-                </li>
-                <li>
-                    DISCO:10%
-                </li>
-                <li>
-                    TEMP: 40°C
-                </li>
-                <li>
-                    Windows
-                </li>
-
-            </ul>
-        </div>
-
-        <div id="card" onclick="showInformationChart">
-            <ul>
-                <li>
-                    nome: David
-                </li>
-                <li>
-                    RAM: 20%
-                </li>
-                <li>
-                    DISCO:10%
-                </li>
-                <li>
-                    TEMP: 40°C
-                </li>
-                <li>
-                    Linux
-                </li>
-
-            </ul>
-        </div>
-
-        <div id="wm-card" onclick="showInformationChart()">
-            <ul>
-                <li>
-                    nome: David
-                </li>
-                <li>
-                    RAM: 20%
-                </li>
-                <li>
-                    DISCO:10%
-                </li>
-                <li>
-                    TEMP: 40°C
-                </li>
-                <li>
-                    Linux
-                </li>
-
-            </ul>
-        </div>
-
-        <div id="wm-card" onclick="showInformationChart()">
-            <ul>
-                <li>
-                    nome: David
-                </li>
-                <li>
-                    RAM: 20%
-                </li>
-                <li>
-                    DISCO:10%
-                </li>
-                <li>
-                    TEMP: 40°C
-                </li>
-                <li>
-                    Linux
-                </li>
-
-            </ul>
-        </div>
-
-        <div id="wm-card" onclick="showInformationChart()">
-            <ul>
-                <li>
-                    nome: David
-                </li>
-                <li>
-                    RAM: 20%
-                </li>
-                <li>
-                    DISCO:10%
-                </li>
-                <li>
-                    TEMP: 40°C
-                </li>
-                <li>
-                    Linux
-                </li>
-
-            </ul>
-        </div>
-
-        <div id="wm-card" onclick="showInformationChart()">
-            <ul>
-                <li>
-                    nome: David
-                </li>
-                <li>
-                    RAM: 20%
-                </li>
-                <li>
-                    DISCO:10%
-                </li>
-                <li>
-                    TEMP: 40°C
-                </li>
-                <li>
-                    Windows
-                </li>
-
-            </ul>
-        </div>
-
-        <div id="nm-card" onclick="showInformationChart()">
-            <ul>
-                <li>
-                    nome: David
-                </li>
-                <li>
-                    RAM: 20%
-                </li>
-                <li>
-                    DISCO:10%
-                </li>
-                <li>
-                    TEMP: 40°C
-                </li>
-                <li>
-                    Windows
-                </li>
-
-            </ul>
-        </div>
-
-        <div id="nm-card" onclick="showInformationChart()">
-            <ul>
-                <li>
-                    nome: David
-                </li>
-                <li>
-                    RAM: 20%
-                </li>
-                <li>
-                    DISCO:10%
-                </li>
-                <li>
-                    TEMP: 40°C
-                </li>
-                <li>
-                    Linux
-                </li>
-
-            </ul>
-        </div>
-
-        <div id="nm-card" onclick="showInformationChart()">
-            <ul>
-                <li>
-                    nome: David
-                </li>
-                <li>
-                    RAM: 20%
-                </li>
-                <li>
-                    DISCO:10%
-                </li>
-                <li>
-                    TEMP: 40°C
-                </li>
-                <li>
-                    Windows
-                </li>
-
-            </ul>
-        </div>
-
-        <div id="nm-card" onclick="showInformationChart()">
-            <ul>
-                <li>
-                    nome: David
-                </li>
-                <li>
-                    RAM: 20%
-                </li>
-                <li>
-                    DISCO:10%
-                </li>
-                <li>
-                    TEMP: 40°C
-                </li>
-                <li>
-                    Windows
-                </li>
-
-            </ul>
-        </div>
     </div>
-    <div class="footer">
+    <!-- <div class="footer">
         <div class="contaner_footer"></div>
-            <ul>
-                <li><a target="_blank" href="https://facebook.com/"><img src="../img/facebook.png"></a></li>
-                <li><a target="_blank" href="https://github.com/Projeto-PI-Grupo-4/Health-Analytics"><img src="../img/github.png"></a></li>
-                <li><a target="_blank" href="https://twitter.com/"><img src="../img/twitter.png"></a></li>
-                <li><a target="_blank" href="https://linkedin.com/"><img src="../img/linkedin.png"></a></li>
-            </ul>
+        <ul>
+            <li><a target="_blank" href="https://facebook.com/"><img src="../img/facebook.png"></a></li>
+            <li><a target="_blank" href="https://github.com/Projeto-PI-Grupo-4/Health-Analytics"><img
+                        src="../img/github.png"></a></li>
+            <li><a target="_blank" href="https://twitter.com/"><img src="../img/twitter.png"></a></li>
+            <li><a target="_blank" href="https://linkedin.com/"><img src="../img/linkedin.png"></a></li>
+        </ul>
         <div class="contaner_footer"></div>
-    </div>
+    </div> -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
+        window.onload = buscarDados();
+        google.charts.load('current', { 'packages': ['gauge'] });
+        function buscarDados() {
+
+            // Rota de buscar dados do banco
+            fetch(`/leituras/dados`, { cache: 'no-store' }).then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (resposta) {
+
+                        resposta.reverse();
+                        buscarDadosParaCard(resposta);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+                .catch(function (error) {
+                    console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+                });
+        };
+
+        function buscarDadosParaCard(params) {
+            console.log(params);
+            document.getElementById('cont-card').innerHTML = '';
+            for (let i = 0; i < params.length; i++) {
+                buscarDadoMaquina(params[i].fkMaquina);
+            }
+        }
+
+        // Busca o ultimo registro de cada freezer
+        function buscarDadoMaquina(fkMaquina) {
+            fetch(`/leituras/ultima-leitura/${fkMaquina}`, { cache: 'no-store' }).then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (resposta) {
+                        resposta.reverse();
+                        inserirCard(resposta);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+                .catch(function (error) {
+                    console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+                });
+        }
+
+        function inserirCard(resposta) {
+
+            document.getElementById('cont-card').innerHTML += `
+
+        <div id="card" onClick=showInformationChart()>
+            <ul>
+                <li>
+                    nome: ${resposta[0].nomeMaquina}
+                </li>
+                <li>
+                    RAM: ${resposta[0].ram}
+                </li>
+                <li>
+                     ${resposta[0].temperatura}°C
+                </li>
+                <li>
+                    ${resposta[0].sistema_operacional}
+                </li>
+            </ul>
+        </div>
+        `
+        }
+
+        // Filtros
+        function filtroRam() {
+            const filtroRam = ram.value;
+            document.getElementById('cont-card').innerHTML = '';
+
+            // Rota de buscar dados do banco
+            fetch(`/leituras/ram:${filtroRam}`, { cache: 'no-store' }).then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (resposta) {
+
+                        resposta.reverse();
+                        buscarDadosParaCard(resposta);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+                .catch(function (error) {
+                    console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+                });
+        }
+
+
         google.charts.load('current', { 'packages': ['gauge'] });
         google.charts.setOnLoadCallback(drawChart);
 
@@ -387,25 +220,6 @@
                 chart.style.display = 'block';
             }
         }
-
-        function buscarDados() {
-
-        // Rota de buscar dados do banco
-        fetch(`/leituras/dados`, { cache: 'no-store' }).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    resposta.reverse();
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-            }
-        })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-            });
-    }
-    buscarDados();
     </script>
 
 </body>

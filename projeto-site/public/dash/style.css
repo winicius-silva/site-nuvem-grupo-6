@@ -18,11 +18,11 @@ ul {
 
 #card {
     border: 1px solid black;
-    border-top: red 3px solid;
+    border-top: #36b536 3px solid;
     margin-top:10px;
     margin-left: 40px;
     padding-right: 10px;
-    width: 150px;
+    width: 180px;
     display:inline-block;
     cursor: pointer;
 }
@@ -64,11 +64,12 @@ a:visited {
 }
 
 #logo-topo{
-    width: 150px;
-    margin-top: 15px;
+    width: 130px;
+    margin-top: 8px;
 }
 #texto-logo{
     align-items: center;
+    margin-bottom: 10px;
 }
 select{
     width: 200px;
@@ -77,12 +78,12 @@ select{
 .filtros{
     float:right;
     margin-right: 100px;
-    margin-top:50px;
+    margin-top:32px;
 }
 .collapse{
     min-width: 50%;
     float:right;
-    padding-bottom: 20px;
+    padding-bottom: 210px;
     background-color:#161b22;
     color:black
     
@@ -91,12 +92,13 @@ select{
     margin-left: 200px;
 }
 #titulo-monitoramento{
-    margin-left: 80px;
+    margin-left: 227px;
     font-size: 25px;
     font-weight: 100;  
+    
 }
 h3{
-    margin-left: 90px;
+    margin-left: 285px;
     color:white;
 }
 
@@ -113,7 +115,7 @@ h3{
 
 .footer li {
     display: inline-block;
-    padding: 20px 30px 0px 30px;
+    padding: 20px 10px 0px 30px;
 }
 
 .footer ul {

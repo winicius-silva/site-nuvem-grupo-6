@@ -6,7 +6,7 @@ var Leitura = require('../models').Leitura;
 
 router.get('/dados', function(req, res, next) {
 
-	const instrucaoSql = `select * from dados where fkMaquina = 1`;
+	const instrucaoSql = `select distinct fkMaquina from dados`;
 
 	sequelize.query(instrucaoSql, {
 		model: Leitura,
@@ -14,13 +14,80 @@ router.get('/dados', function(req, res, next) {
 	  })
 	  .then(resultado => {
 			console.log(`Encontrados: ${resultado.length}`);
-			console.log(resultado);
 			res.json(resultado);
 	  }).catch(erro => {
 			console.error(erro);
 			res.status(500).send(erro.message);
 	  });
 });
+
+
+
+router.get('/ultima-leitura/:fkMaquina', function(req, res, next) {
+	var fkMaquina = req.params.fkMaquina;
+	
+	const instrucaoSql = `
+	select top 1 d.ram,d.temperatura, d.processador, d.fkMaquina, m.nomeMaquina, m.sistema_operacional
+	from dados as d join maquina as m 
+	on d.fkMaquina = m.fkUsuario where fkMaquina = ${fkMaquina};`;
+
+
+	sequelize.query(instrucaoSql, {
+		model: Leitura,
+		mapToModel: true 
+	  })
+	  .then(resultado => {
+			res.json(resultado);
+	  }).catch(erro => {
+			console.error(erro);
+			res.status(500).send(erro.message);
+	  });
+});
+
+
+
+// Filtros 
+
+router.get('/ram:filtroRam', function(req, res, next) {
+	let instrucaoSql = '';
+	var ordem = req.params.filtroRam;
+	if(ordem === ':maisCritico'){
+		instrucaoSql = `select distinct fkMaquina, ram, dataDado from dados order by ram desc`
+	}else{
+		instrucaoSql = `select distinct fkMaquina, ram, dataDado from dados order by ram asc`
+	}
+	sequelize.query(instrucaoSql, {
+		model: Leitura,
+		mapToModel: true 
+	  })
+	  .then(resultado => {
+			console.log(`Encontrados: ${resultado.length}`);
+			res.json(resultado);
+	  }).catch(erro => {
+			console.error(erro);
+			res.status(500).send(erro.message);
+	  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Outros exemplos de rota do semestre passado
